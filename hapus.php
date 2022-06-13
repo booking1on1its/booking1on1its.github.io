@@ -1,3 +1,11 @@
 <?php
-$koneksi = mysqli_connect("localhost:8080", "root", "", "dbfullcalendar", "events") or die
-($koneksi);
+
+include "koneksi.php";
+
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+
+    mysqli_query($koneksi, "DELETE FROM events where id = '$id' ");
+    
+
+}
